@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 特定文字列の色分け -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>fighting-js</title>
+    <style type="text/css">
+    .mark{
+      color: red;
+    }
+    </style>
+    <script type="text/javascript">
+
+      function markBrackets(){
+        //id がtextである要素を探してその中の文字列をsに代入する
+        var e = document.getElementById("text");
+        var s = e.innerHTML;
+        //innnterプロパティ。要素の中のhtmlを取得または設定する
+
+        //置換処理
+        var reg = new RegExp("「.+?」", "g");
+
+        //置換した文字列で元の要素の中身を更新する
+        e.innerHTML = s.replace(reg, "<span class='mark'>$&</span>");
+      }
+
+
+    </script>
+  </head>
+
+  <body onload="markBrackets()">
+    <h1>じゃんけんはしたくない.js</h1>
+    <p id="text">
+      絵本のキャラクターである「しおり」は、本に挟む「栞」をイメージして作られた。他にも文房具のキャラクターが提案されましたが、シンプルで邪魔にならないという理由で「しおり」に決定しました。
+    </p>
+
+  </body >
+</html>
