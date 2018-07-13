@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>fighting-js</title>
+    <script type="text/javascript" src="janken.js"></script>
+    <script type="text/javascript">
+
+      function init(){
+        if (!confirm("じゃんけんしますか？")){
+          document.getElementByld("btnG").disabled = true;
+          document.getElementByld("btnC").disabled = true;
+          document.getElementByld("btnP").disabled = true;
+        }
+      }
+      //じゃんけん結果の表示
+      function myChoice(user){
+        var strLocal = myResult(user)
+        alert(strLocal);
+      }
+    </script>
+  </head>
+
+  <body onload="init()">
+    <h1>Javascript challenge</h1>
+
+
+    <form name="forml">
+      <input type="button" id="btnG" onclick="myChoice(0)" value="ぐー">
+      <input type="button" id="btnC" onclick="myChoice(1)" value="ちょき">
+      <input type="button" id="btnP" onclick="myChoice(2)" value="ぱー">
+    </form>
+
+
+
+
+  </body >
+</html>
